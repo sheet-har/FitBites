@@ -1,0 +1,7 @@
+{
+  "name": "FitBites - Smart Food Ecosystem",
+  "description": "A comprehensive health and nutrition platform focusing on fat replacement and smart snacking. Scan QR codes for instant nutrition insights and personalized recommendations.",
+  "requestFramePermissions": [
+    "camera"
+  ]
+}
