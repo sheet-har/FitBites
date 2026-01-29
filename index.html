@@ -1,65 +1,70 @@
-
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>FitBites | Smart Food for Everyday Fitness</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-      tailwind.config = {
-        darkMode: 'class',
-        theme: {
-          extend: {
-            colors: {
-              fitGreen: {
-                50: '#f4f9f1',
-                100: '#e6f2e1',
-                200: '#cfe5c6',
-                300: '#abd09d',
-                400: '#7eb36b',
-                500: '#4D9136',
-                600: '#3c752a',
-                700: '#305d23',
-                800: '#294a1f',
-                900: '#233f1d',
-              },
-              fitBrown: {
-                50: '#f9f6f5',
-                100: '#f0e9e7',
-                200: '#e3d6d2',
-                300: '#ceb7b0',
-                400: '#b18e83',
-                500: '#5D382A',
-                600: '#8c6255',
-                700: '#754f44',
-                800: '#61423a',
-                900: '#533a33',
-              }
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FitBites | Smart Food for Everyday Fitness</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            fitGreen: {
+              50: '#f4f9f1',
+              100: '#e6f2e1',
+              200: '#cfe5c6',
+              300: '#abd09d',
+              400: '#7eb36b',
+              500: '#4D9136',
+              600: '#3c752a',
+              700: '#305d23',
+              800: '#294a1f',
+              900: '#233f1d',
+            },
+            fitBrown: {
+              50: '#f9f6f5',
+              100: '#f0e9e7',
+              200: '#e3d6d2',
+              300: '#ceb7b0',
+              400: '#b18e83',
+              500: '#5D382A',
+              600: '#8c6255',
+              700: '#754f44',
+              800: '#61423a',
+              900: '#533a33',
             }
           }
         }
       }
-    </script>
-    <style>
-      @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
-      body {
-        font-family: 'Inter', sans-serif;
-      }
-      ::-webkit-scrollbar {
-        width: 8px;
-      }
-      ::-webkit-scrollbar-track {
-        background: transparent;
-      }
-      ::-webkit-scrollbar-thumb {
-        background: #cbd5e1;
-        border-radius: 10px;
-      }
-      .dark ::-webkit-scrollbar-thumb {
-        background: #475569;
-      }
-    </style>
+    }
+  </script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+    body {
+      font-family: 'Inter', sans-serif;
+    }
+
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: transparent;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: #cbd5e1;
+      border-radius: 10px;
+    }
+
+    .dark ::-webkit-scrollbar-thumb {
+      background: #475569;
+    }
+  </style>
   <script type="importmap">
 {
   "imports": {
@@ -72,10 +77,12 @@
   }
 }
 </script>
-<link rel="stylesheet" href="/index.css">
+  <link rel="stylesheet" href="/index.css">
 </head>
-  <body class="bg-white text-gray-900 transition-colors duration-200">
-    <div id="root"></div>
+
+<body class="bg-white text-gray-900 transition-colors duration-200">
+  <div id="root"></div>
   <script type="module" src="/index.tsx"></script>
 </body>
+
 </html>
