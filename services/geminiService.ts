@@ -7,11 +7,22 @@ export class GeminiService {
 
   constructor() {
     const apiKey = import.meta.env.VITE_GEMINI_API_KEY || '';
-    this.ai = new GoogleGenAI({ apiKey });
+    if (apiKey) {
+      this.ai = new GoogleGenAI({ apiKey });
+    }
   }
 
 
+
   async analyzeFatReplacement(snack: SnackData): Promise<AnalysisResult> {
+    if (!this.ai) {
+      console.warn("Gemini AI not initialized: Missing API Key");
+      return {
+        comparison: "The FitBites replacement focuses on using healthier fats like MCTs and plant-based alternatives.",
+        suggestions: ["Natural Greek Yogurt", "Fresh Berries", "Handful of Walnuts"],
+        healthTip: "Prioritize fats from whole plants like avocados and seeds for sustained energy."
+      };
+    }
     const prompt = `Analyze this snack for fat quality: 
       Name: ${snack.name}
       Ingredients: ${snack.ingredients.join(', ')}
