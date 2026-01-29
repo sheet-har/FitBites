@@ -6,8 +6,10 @@ export class GeminiService {
   private ai: GoogleGenAI;
 
   constructor() {
-    this.ai = new GoogleGenAI({ apiKey: process.env.API_KEY || '' });
+    const apiKey = import.meta.env.VITE_GEMINI_API_KEY || '';
+    this.ai = new GoogleGenAI({ apiKey });
   }
+
 
   async analyzeFatReplacement(snack: SnackData): Promise<AnalysisResult> {
     const prompt = `Analyze this snack for fat quality: 
@@ -27,8 +29,8 @@ export class GeminiService {
             type: Type.OBJECT,
             properties: {
               comparison: { type: Type.STRING, description: 'Comparison of fats' },
-              suggestions: { 
-                type: Type.ARRAY, 
+              suggestions: {
+                type: Type.ARRAY,
                 items: { type: Type.STRING },
                 description: '3 healthy snack swap suggestions'
               },
