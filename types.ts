@@ -19,12 +19,14 @@ export interface SnackData {
   ingredients: string[];
   typeOfFats: string;
   description: string;
+  calories: number;
 }
 
 export interface AnalysisResult {
   comparison: string;
   suggestions: string[];
   healthTip: string;
+  estimatedCalories: number;
 }
 
 export enum AppSection {

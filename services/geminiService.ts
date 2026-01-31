@@ -20,7 +20,8 @@ export class GeminiService {
       return {
         comparison: "The FitBites replacement focuses on using healthier fats like MCTs and plant-based alternatives.",
         suggestions: ["Natural Greek Yogurt", "Fresh Berries", "Handful of Walnuts"],
-        healthTip: "Prioritize fats from whole plants like avocados and seeds for sustained energy."
+        healthTip: "Prioritize fats from whole plants like avocados and seeds for sustained energy.",
+        estimatedCalories: 150
       };
     }
     const prompt = `Analyze this snack for fat quality: 
@@ -28,7 +29,7 @@ export class GeminiService {
       Ingredients: ${snack.ingredients.join(', ')}
       Fat Quality: Normal Fat ${snack.normalFat}g vs FitBites Replaced Fat ${snack.replacedFat}g.
       
-      Provide a comparative analysis, 3 healthy alternatives or swap suggestions, and a quick health tip.`;
+      Provide a comparative analysis, 3 healthy alternatives or swap suggestions, a quick health tip, and an estimated calorie count per serving.`;
 
     try {
       const response = await this.ai.models.generateContent({
@@ -45,9 +46,10 @@ export class GeminiService {
                 items: { type: Type.STRING },
                 description: '3 healthy snack swap suggestions'
               },
-              healthTip: { type: Type.STRING, description: 'One short health tip' }
+              healthTip: { type: Type.STRING, description: 'One short health tip' },
+              estimatedCalories: { type: Type.NUMBER, description: 'Estimated calorie count per serving' }
             },
-            required: ['comparison', 'suggestions', 'healthTip']
+            required: ['comparison', 'suggestions', 'healthTip', 'estimatedCalories']
           }
         }
       });
@@ -58,7 +60,8 @@ export class GeminiService {
       return {
         comparison: "The FitBites replacement significantly reduces trans-fats and saturated fats compared to standard options.",
         suggestions: ["Natural Greek Yogurt", "Fresh Berries", "Handful of Walnuts"],
-        healthTip: "Prioritize fats from whole plants like avocados and seeds for sustained energy."
+        healthTip: "Prioritize fats from whole plants like avocados and seeds for sustained energy.",
+        estimatedCalories: 150
       };
     }
   }

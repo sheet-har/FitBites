@@ -1,11 +1,11 @@
 
 import React from 'react';
-import { 
-  LayoutDashboard, 
-  ScanQrCode, 
-  BarChart3, 
-  ShoppingBag, 
-  Users, 
+import {
+  LayoutDashboard,
+  ScanQrCode,
+  BarChart3,
+  ShoppingBag,
+  Users,
   BookOpen,
   UserCircle
 } from 'lucide-react';
@@ -37,7 +37,8 @@ export const MOCK_SNACKS = [
     score: 92,
     ingredients: ['Whole grain oats', 'Unsweetened cocoa', 'Stevia', 'Almond flour', 'MCT Oil'],
     typeOfFats: 'High-quality MCTs and Unsaturated Plant Fats',
-    description: 'A guilt-free chocolate craving solver with 75% less unhealthy fats.'
+    description: 'A guilt-free chocolate craving solver with 75% less unhealthy fats.',
+    calories: 120
   },
   {
     id: 'snack_002',
@@ -49,6 +50,7 @@ export const MOCK_SNACKS = [
     score: 88,
     ingredients: ['Sweet Potato', 'Olive Oil spray', 'Sea Salt', 'Paprika'],
     typeOfFats: 'Omega-9 rich Olive Oil',
-    description: 'Thinly sliced sweet potatoes baked to perfection using minimal high-quality oils.'
+    description: 'Thinly sliced sweet potatoes baked to perfection using minimal high-quality oils.',
+    calories: 110
   }
 ];

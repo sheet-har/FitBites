@@ -66,7 +66,7 @@ export const Scanner: React.FC = () => {
       </div>
 
       {!scanning && !result && !analyzing && (
-        <div 
+        <div
           onClick={startScanning}
           className="aspect-video w-full max-w-lg mx-auto border-4 border-dashed border-gray-300 dark:border-gray-700 rounded-3xl flex flex-col items-center justify-center cursor-pointer hover:border-fitGreen-500 transition-colors bg-gray-50 dark:bg-gray-800/50"
         >
@@ -79,16 +79,16 @@ export const Scanner: React.FC = () => {
 
       {scanning && (
         <div className="relative aspect-video w-full max-w-lg mx-auto bg-black rounded-3xl overflow-hidden">
-          <video 
-            ref={videoRef} 
-            autoPlay 
-            playsInline 
+          <video
+            ref={videoRef}
+            autoPlay
+            playsInline
             className="w-full h-full object-cover"
           />
           <div className="absolute inset-0 flex items-center justify-center">
-             <div className="w-64 h-64 border-2 border-fitGreen-400 rounded-lg animate-pulse"></div>
+            <div className="w-64 h-64 border-2 border-fitGreen-400 rounded-lg animate-pulse"></div>
           </div>
-          <button 
+          <button
             onClick={stopCamera}
             className="absolute top-4 right-4 bg-white/20 hover:bg-white/40 p-2 rounded-full backdrop-blur-md"
           >
@@ -123,18 +123,18 @@ export const Scanner: React.FC = () => {
                   </div>
                 </div>
               </div>
-              
+
               <div className="mt-8 space-y-4">
-                 <div className="flex justify-between items-end">
-                    <span className="text-gray-500 dark:text-gray-400">Fat Replacement Score</span>
-                    <span className="text-3xl font-black text-fitGreen-600">{result.score}/100</span>
-                 </div>
-                 <div className="w-full bg-gray-100 dark:bg-gray-700 rounded-full h-3">
-                    <div 
-                      className="bg-fitGreen-500 h-3 rounded-full" 
-                      style={{ width: `${result.score}%` }}
-                    />
-                 </div>
+                <div className="flex justify-between items-end">
+                  <span className="text-gray-500 dark:text-gray-400">Fat Replacement Score</span>
+                  <span className="text-3xl font-black text-fitGreen-600">{result.score}/100</span>
+                </div>
+                <div className="w-full bg-gray-100 dark:bg-gray-700 rounded-full h-3">
+                  <div
+                    className="bg-fitGreen-500 h-3 rounded-full"
+                    style={{ width: `${result.score}%` }}
+                  />
+                </div>
               </div>
 
               <div className="mt-6 pt-6 border-t dark:border-gray-700">
@@ -149,6 +149,16 @@ export const Scanner: React.FC = () => {
                   <div className="bg-fitGreen-50 dark:bg-fitGreen-900/20 p-3 rounded-xl border border-fitGreen-200 dark:border-fitGreen-900/50">
                     <p className="text-xs text-fitGreen-600">Replaced Fat</p>
                     <p className="text-lg font-bold text-fitGreen-700 dark:text-fitGreen-300">{result.replacedFat}g</p>
+                  </div>
+                </div>
+
+                <div className="mt-4 bg-orange-50 dark:bg-orange-900/10 p-4 rounded-2xl border border-orange-100 dark:border-orange-900/30 flex justify-between items-center">
+                  <div>
+                    <p className="text-xs text-orange-600 dark:text-orange-400 font-bold uppercase">Calorie Intake</p>
+                    <p className="text-2xl font-black text-orange-700 dark:text-orange-300">{result.calories} <span className="text-sm font-normal">kcal</span></p>
+                  </div>
+                  <div className="bg-orange-100 dark:bg-orange-900/40 p-2 rounded-xl text-orange-600">
+                    <Info size={20} />
                   </div>
                 </div>
                 <p className="text-sm mt-4 text-gray-600 dark:text-gray-400 italic">
@@ -185,10 +195,14 @@ export const Scanner: React.FC = () => {
                 <p className="text-xs font-bold text-fitGreen-400 uppercase mb-1">Expert Health Tip</p>
                 <p className="text-sm italic">"{aiAnalysis.healthTip}"</p>
               </div>
+              <div className="mt-4 flex items-center justify-between bg-white/10 p-3 rounded-2xl">
+                <span className="text-xs font-bold uppercase">Estimated Calories</span>
+                <span className="text-xl font-black">{aiAnalysis.estimatedCalories} kcal</span>
+              </div>
             </div>
           </div>
 
-          <button 
+          <button
             onClick={() => { setResult(null); setAiAnalysis(null); }}
             className="w-full bg-fitGreen-500 hover:bg-fitGreen-600 text-white font-bold py-4 rounded-2xl transition-all shadow-lg flex items-center justify-center gap-2"
           >
